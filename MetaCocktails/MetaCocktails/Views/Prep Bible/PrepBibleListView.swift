@@ -31,14 +31,18 @@ struct PrepBibleListView: View {
                 .navigationTitle("Prep Ingredients ⏲️")
                 .listStyle(.plain)
                 .disabled(prepViewModel.isShowingPrepRecipe)
+                
             }
+            .blur(radius: prepViewModel.isShowingPrepRecipe ? 20 : 0)
             if prepViewModel.isShowingPrepRecipe {
+                
+                
                 PrepRecipeView(isShowingPrepRecipe: $prepViewModel.isShowingPrepRecipe, prepRecipe: prepViewModel.selectedPrepIngredient!.prepRecipe)
+                    
                 
             }
             
         }
-        
         
         
     }

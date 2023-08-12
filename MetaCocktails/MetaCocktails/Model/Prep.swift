@@ -24,7 +24,7 @@ struct prepItemRecipe: Identifiable {
     
     static let cucumberSyrup = Prep(id: 035, prepIngredientName: "Cucumber Syrup", prepRecipe: "Make a cucumber syrup")
     
-    static let gingerSyrup = Prep(id: 036, prepIngredientName: "Ginger Syrup", prepRecipe: "Make a ginger syrup")
+    static let gingerSyrup = Prep(id: 036, prepIngredientName: "Ginger Syrup", prepRecipe: PrepRecipeDescriptions.gingerSyrupRecipe)
     
     static let orgeat = Prep(id: 037, prepIngredientName: "Orgeat", prepRecipe: "Make orgeat, orNot.")
     

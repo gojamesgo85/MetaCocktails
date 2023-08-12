@@ -14,9 +14,12 @@ struct StandardButtonStyle: ViewModifier {
             
             .buttonStyle(.bordered)
             .controlSize(.large)
-            .tint(.teal)
             .fontWeight(.bold)
-            .frame(width: 200, height: 50)
+            .frame(width: 200, height: 30)
+            .background(Color(UIColor.systemTeal))
+            
+            
+           
             
         
     }
@@ -24,4 +27,10 @@ struct StandardButtonStyle: ViewModifier {
     
 }
 
+
+struct StandardButtonStyle_Previews: PreviewProvider {
+    static var previews: some View {
+        FlavorProfileSearchView()
+    }
+}
 

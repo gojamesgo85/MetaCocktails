@@ -31,6 +31,16 @@ struct PrepRecipeView: View {
             
         }
         
+        .frame(width: 340, height: 725)
+        .background(Color(.systemGray5))
+        .cornerRadius(12)
+        .shadow(radius: 40)
+        .overlay(Button {
+            isShowingPrepRecipe = false
+        }label: {
+            XDismissButton()
+        }, alignment: .topTrailing)
+        
     }
         
 }
