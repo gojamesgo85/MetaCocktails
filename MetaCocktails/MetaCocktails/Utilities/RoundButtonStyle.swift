@@ -12,9 +12,10 @@ struct RoundButtonStyle: ViewModifier {
     func body(content: Content) -> some View {
         content
             
-            .padding(25)
+            .padding(20)
             .background(Color(UIColor.systemBackground))
             .clipShape(Circle())
+            .frame(width: 110, height: 110)
             .shadow(color: Color(UIColor.systemGray), radius: 10, x: 0, y: 0)
 
     }

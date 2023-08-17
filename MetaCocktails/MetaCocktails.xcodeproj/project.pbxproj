@@ -10,15 +10,14 @@
 		1A082A6A2A845109002F8D54 /* Prep.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A082A692A845109002F8D54 /* Prep.swift */; };
 		1A082A6C2A845BD7002F8D54 /* PrepRecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A082A6B2A845BD7002F8D54 /* PrepRecipeView.swift */; };
 		1A2F0F6C2A84A11A006FE24C /* PrepRecipeDescriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2F0F6B2A84A11A006FE24C /* PrepRecipeDescriptions.swift */; };
-		1A2F0F702A854F7D006FE24C /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2F0F6F2A854F7D006FE24C /* SearchViewModel.swift */; };
-		1A2F0F722A85556D006FE24C /* IngredientLikesChecklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2F0F712A85556D006FE24C /* IngredientLikesChecklist.swift */; };
-		1A2F0F742A85558A006FE24C /* IngredientDislikesChecklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2F0F732A85558A006FE24C /* IngredientDislikesChecklist.swift */; };
-		1A2F0F762A8555A0006FE24C /* ProfileLikesChecklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2F0F752A8555A0006FE24C /* ProfileLikesChecklist.swift */; };
-		1A2F0F782A8555CF006FE24C /* ProfileDislikesChecklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2F0F772A8555CF006FE24C /* ProfileDislikesChecklist.swift */; };
+		1A2F0F722A85556D006FE24C /* ComponentLikesChecklistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2F0F712A85556D006FE24C /* ComponentLikesChecklistView.swift */; };
+		1A2F0F742A85558A006FE24C /* ComponentDislikesChecklistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2F0F732A85558A006FE24C /* ComponentDislikesChecklistView.swift */; };
 		1A2F0F7A2A857038006FE24C /* PreferencesCheckListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2F0F792A857038006FE24C /* PreferencesCheckListCell.swift */; };
 		1A2F0F7E2A857581006FE24C /* SearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2F0F7D2A857581006FE24C /* SearchBarView.swift */; };
-		1A2F0F822A8586EE006FE24C /* FlavorProfiles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2F0F812A8586EE006FE24C /* FlavorProfiles.swift */; };
 		1A2F0F862A86F348006FE24C /* RoundButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2F0F852A86F348006FE24C /* RoundButtonStyle.swift */; };
+		1A2F0F882A881B8F006FE24C /* IngredientsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2F0F872A881B8F006FE24C /* IngredientsModel.swift */; };
+		1A2F0F8A2A883135006FE24C /* SearchCriteriaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2F0F892A883135006FE24C /* SearchCriteriaViewModel.swift */; };
+		1A2F0F8E2A8B6A7A006FE24C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A2F0F8D2A8B6A7A006FE24C /* Extensions.swift */; };
 		1AC830982A829D1000FCE1DA /* MetaCocktailsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC830972A829D1000FCE1DA /* MetaCocktailsApp.swift */; };
 		1AC8309C2A829D1200FCE1DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AC8309B2A829D1200FCE1DA /* Assets.xcassets */; };
 		1AC8309F2A829D1200FCE1DA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1AC8309E2A829D1200FCE1DA /* Preview Assets.xcassets */; };
@@ -43,6 +42,13 @@
 		1AC830E52A84349200FCE1DA /* BuildOrderDescriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC830E42A84349200FCE1DA /* BuildOrderDescriptions.swift */; };
 		1AC830EE2A8447C000FCE1DA /* PrepBibleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC830ED2A8447C000FCE1DA /* PrepBibleViewModel.swift */; };
 		1AC830F02A844D8900FCE1DA /* prepListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC830EF2A844D8900FCE1DA /* prepListCell.swift */; };
+		1AF2610E2A8C685D00D88373 /* SpiritLikesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF2610D2A8C685D00D88373 /* SpiritLikesListView.swift */; };
+		1AF261102A8C694200D88373 /* SpiritDislikesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF2610F2A8C694200D88373 /* SpiritDislikesListView.swift */; };
+		1AF261122A8C6A7700D88373 /* ProfileLikesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF261112A8C6A7700D88373 /* ProfileLikesListView.swift */; };
+		1AF261142A8C6E5700D88373 /* FlavorLikesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF261132A8C6E5700D88373 /* FlavorLikesListView.swift */; };
+		1AF261162A8C6E8000D88373 /* StylePreferencesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF261152A8C6E8000D88373 /* StylePreferencesListView.swift */; };
+		1AF261182A8C6ED600D88373 /* ProfileDislikesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF261172A8C6ED600D88373 /* ProfileDislikesListView.swift */; };
+		1AF2611A2A8C6EFD00D88373 /* FlavorDislikesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF261192A8C6EFD00D88373 /* FlavorDislikesListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,15 +79,14 @@
 		1A082A692A845109002F8D54 /* Prep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prep.swift; sourceTree = "<group>"; };
 		1A082A6B2A845BD7002F8D54 /* PrepRecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepRecipeView.swift; sourceTree = "<group>"; };
 		1A2F0F6B2A84A11A006FE24C /* PrepRecipeDescriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepRecipeDescriptions.swift; sourceTree = "<group>"; };
-		1A2F0F6F2A854F7D006FE24C /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
-		1A2F0F712A85556D006FE24C /* IngredientLikesChecklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientLikesChecklist.swift; sourceTree = "<group>"; };
-		1A2F0F732A85558A006FE24C /* IngredientDislikesChecklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientDislikesChecklist.swift; sourceTree = "<group>"; };
-		1A2F0F752A8555A0006FE24C /* ProfileLikesChecklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLikesChecklist.swift; sourceTree = "<group>"; };
-		1A2F0F772A8555CF006FE24C /* ProfileDislikesChecklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDislikesChecklist.swift; sourceTree = "<group>"; };
+		1A2F0F712A85556D006FE24C /* ComponentLikesChecklistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentLikesChecklistView.swift; sourceTree = "<group>"; };
+		1A2F0F732A85558A006FE24C /* ComponentDislikesChecklistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComponentDislikesChecklistView.swift; sourceTree = "<group>"; };
 		1A2F0F792A857038006FE24C /* PreferencesCheckListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesCheckListCell.swift; sourceTree = "<group>"; };
 		1A2F0F7D2A857581006FE24C /* SearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarView.swift; sourceTree = "<group>"; };
-		1A2F0F812A8586EE006FE24C /* FlavorProfiles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavorProfiles.swift; sourceTree = "<group>"; };
 		1A2F0F852A86F348006FE24C /* RoundButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundButtonStyle.swift; sourceTree = "<group>"; };
+		1A2F0F872A881B8F006FE24C /* IngredientsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsModel.swift; sourceTree = "<group>"; };
+		1A2F0F892A883135006FE24C /* SearchCriteriaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCriteriaViewModel.swift; sourceTree = "<group>"; };
+		1A2F0F8D2A8B6A7A006FE24C /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		1AC830942A829D1000FCE1DA /* MetaCocktails.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MetaCocktails.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AC830972A829D1000FCE1DA /* MetaCocktailsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetaCocktailsApp.swift; sourceTree = "<group>"; };
 		1AC8309B2A829D1200FCE1DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -108,6 +113,13 @@
 		1AC830E42A84349200FCE1DA /* BuildOrderDescriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildOrderDescriptions.swift; sourceTree = "<group>"; };
 		1AC830ED2A8447C000FCE1DA /* PrepBibleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepBibleViewModel.swift; sourceTree = "<group>"; };
 		1AC830EF2A844D8900FCE1DA /* prepListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = prepListCell.swift; sourceTree = "<group>"; };
+		1AF2610D2A8C685D00D88373 /* SpiritLikesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritLikesListView.swift; sourceTree = "<group>"; };
+		1AF2610F2A8C694200D88373 /* SpiritDislikesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritDislikesListView.swift; sourceTree = "<group>"; };
+		1AF261112A8C6A7700D88373 /* ProfileLikesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLikesListView.swift; sourceTree = "<group>"; };
+		1AF261132A8C6E5700D88373 /* FlavorLikesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavorLikesListView.swift; sourceTree = "<group>"; };
+		1AF261152A8C6E8000D88373 /* StylePreferencesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StylePreferencesListView.swift; sourceTree = "<group>"; };
+		1AF261172A8C6ED600D88373 /* ProfileDislikesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDislikesListView.swift; sourceTree = "<group>"; };
+		1AF261192A8C6EFD00D88373 /* FlavorDislikesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavorDislikesListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,7 +200,7 @@
 				1AC830E42A84349200FCE1DA /* BuildOrderDescriptions.swift */,
 				1A082A692A845109002F8D54 /* Prep.swift */,
 				1A2F0F6B2A84A11A006FE24C /* PrepRecipeDescriptions.swift */,
-				1A2F0F812A8586EE006FE24C /* FlavorProfiles.swift */,
+				1A2F0F872A881B8F006FE24C /* IngredientsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -257,6 +269,7 @@
 			children = (
 				1AC830DA2A83F83000FCE1DA /* StandardButtonStyle.swift */,
 				1A2F0F852A86F348006FE24C /* RoundButtonStyle.swift */,
+				1A2F0F8D2A8B6A7A006FE24C /* Extensions.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -298,12 +311,11 @@
 		1AC830EB2A84423F00FCE1DA /* Search View */ = {
 			isa = PBXGroup;
 			children = (
+				1A2F0F892A883135006FE24C /* SearchCriteriaViewModel.swift */,
 				1AC830D72A83F6BF00FCE1DA /* FlavorProfileSearchView.swift */,
-				1A2F0F6F2A854F7D006FE24C /* SearchViewModel.swift */,
-				1A2F0F712A85556D006FE24C /* IngredientLikesChecklist.swift */,
-				1A2F0F732A85558A006FE24C /* IngredientDislikesChecklist.swift */,
-				1A2F0F752A8555A0006FE24C /* ProfileLikesChecklist.swift */,
-				1A2F0F772A8555CF006FE24C /* ProfileDislikesChecklist.swift */,
+				1A2F0F712A85556D006FE24C /* ComponentLikesChecklistView.swift */,
+				1A2F0F732A85558A006FE24C /* ComponentDislikesChecklistView.swift */,
+				1AF2610C2A8C681000D88373 /* Search List Sub Views */,
 			);
 			path = "Search View";
 			sourceTree = "<group>";
@@ -316,6 +328,20 @@
 				1A082A6B2A845BD7002F8D54 /* PrepRecipeView.swift */,
 			);
 			path = "Prep Bible";
+			sourceTree = "<group>";
+		};
+		1AF2610C2A8C681000D88373 /* Search List Sub Views */ = {
+			isa = PBXGroup;
+			children = (
+				1AF2610D2A8C685D00D88373 /* SpiritLikesListView.swift */,
+				1AF261112A8C6A7700D88373 /* ProfileLikesListView.swift */,
+				1AF261132A8C6E5700D88373 /* FlavorLikesListView.swift */,
+				1AF261152A8C6E8000D88373 /* StylePreferencesListView.swift */,
+				1AF2610F2A8C694200D88373 /* SpiritDislikesListView.swift */,
+				1AF261172A8C6ED600D88373 /* ProfileDislikesListView.swift */,
+				1AF261192A8C6EFD00D88373 /* FlavorDislikesListView.swift */,
+			);
+			path = "Search List Sub Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -420,31 +446,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				1AC830F02A844D8900FCE1DA /* prepListCell.swift in Sources */,
-				1A2F0F762A8555A0006FE24C /* ProfileLikesChecklist.swift in Sources */,
 				1AC830E52A84349200FCE1DA /* BuildOrderDescriptions.swift in Sources */,
 				1AC830D82A83F6BF00FCE1DA /* FlavorProfileSearchView.swift in Sources */,
 				1AC830CE2A82E57700FCE1DA /* CocktailListViewModel.swift in Sources */,
 				1A2F0F6C2A84A11A006FE24C /* PrepRecipeDescriptions.swift in Sources */,
+				1A2F0F8A2A883135006FE24C /* SearchCriteriaViewModel.swift in Sources */,
 				1AC830AB2A82AE7300FCE1DA /* RecipeCard.swift in Sources */,
-				1A2F0F702A854F7D006FE24C /* SearchViewModel.swift in Sources */,
+				1AF261102A8C694200D88373 /* SpiritDislikesListView.swift in Sources */,
+				1A2F0F8E2A8B6A7A006FE24C /* Extensions.swift in Sources */,
+				1AF261182A8C6ED600D88373 /* ProfileDislikesListView.swift in Sources */,
+				1A2F0F882A881B8F006FE24C /* IngredientsModel.swift in Sources */,
 				1AC830C62A82D57600FCE1DA /* CocktailListView.swift in Sources */,
 				1AC830DD2A83FD5D00FCE1DA /* PrepBibleListView.swift in Sources */,
-				1A2F0F742A85558A006FE24C /* IngredientDislikesChecklist.swift in Sources */,
+				1A2F0F742A85558A006FE24C /* ComponentDislikesChecklistView.swift in Sources */,
 				1AC830E12A8419DA00FCE1DA /* RecipeIngredientsView.swift in Sources */,
 				1A082A6A2A845109002F8D54 /* Prep.swift in Sources */,
+				1AF2610E2A8C685D00D88373 /* SpiritLikesListView.swift in Sources */,
 				1A082A6C2A845BD7002F8D54 /* PrepRecipeView.swift in Sources */,
 				1AC830982A829D1000FCE1DA /* MetaCocktailsApp.swift in Sources */,
 				1AC830EE2A8447C000FCE1DA /* PrepBibleViewModel.swift in Sources */,
+				1AF2611A2A8C6EFD00D88373 /* FlavorDislikesListView.swift in Sources */,
+				1AF261162A8C6E8000D88373 /* StylePreferencesListView.swift in Sources */,
 				1AC830D42A83134D00FCE1DA /* BuildOrderView.swift in Sources */,
-				1A2F0F822A8586EE006FE24C /* FlavorProfiles.swift in Sources */,
-				1A2F0F722A85556D006FE24C /* IngredientLikesChecklist.swift in Sources */,
+				1A2F0F722A85556D006FE24C /* ComponentLikesChecklistView.swift in Sources */,
 				1AC830A82A82A08500FCE1DA /* Cocktail.swift in Sources */,
 				1AC830C82A82D69C00FCE1DA /* CocktailListCell.swift in Sources */,
-				1A2F0F782A8555CF006FE24C /* ProfileDislikesChecklist.swift in Sources */,
 				1AC830DB2A83F83000FCE1DA /* StandardButtonStyle.swift in Sources */,
+				1AF261142A8C6E5700D88373 /* FlavorLikesListView.swift in Sources */,
 				1A2F0F7E2A857581006FE24C /* SearchBarView.swift in Sources */,
 				1AC830DF2A83FD8600FCE1DA /* TabBarView.swift in Sources */,
 				1A2F0F7A2A857038006FE24C /* PreferencesCheckListCell.swift in Sources */,
+				1AF261122A8C6A7700D88373 /* ProfileLikesListView.swift in Sources */,
 				1A2F0F862A86F348006FE24C /* RoundButtonStyle.swift in Sources */,
 				1AC830D22A82ED7200FCE1DA /* XDismissButton.swift in Sources */,
 			);

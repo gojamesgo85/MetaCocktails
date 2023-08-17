@@ -10,7 +10,7 @@ import SwiftUI
 struct TabBarView: View {
     var body: some View {
         TabView {
-           FlavorProfileSearchView()
+            FlavorProfileSearchView()
                 .tabItem { Label("Search", systemImage: "magnifyingglass.circle.fill") }
            CocktailListView()
                 .tabItem { Label("A-Z", systemImage: "list.bullet") }
@@ -26,5 +26,6 @@ struct TabBarView: View {
 struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
         TabBarView()
+            .environmentObject(SearchCriteriaViewModel())
     }
 }

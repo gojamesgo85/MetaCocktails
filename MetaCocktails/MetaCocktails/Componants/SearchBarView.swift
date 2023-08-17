@@ -10,14 +10,15 @@ import SwiftUI
 
 struct SearchBarView: View {
     
-    @State var searchText: String = ""
+    @Binding var searchText: String
+    
     
     var body: some View {
         HStack {
             Image(systemName: "magnifyingglass")
                 .foregroundColor(Color.gray)
             TextField("Search for an ingredient...", text: $searchText)
-              
+                .autocorrectionDisabled()
                 .overlay(
                     Image(systemName: "xmark.circle.fill")
                         .padding()
@@ -25,6 +26,7 @@ struct SearchBarView: View {
                         .foregroundColor(Color.white)
                         .opacity(searchText.isEmpty ? 0.0 : 1.0)
                         .onTapGesture {
+                            UIApplication.shared.endEditing()
                             searchText = ""
                         }
                     ,alignment: .trailing
@@ -42,19 +44,16 @@ struct SearchBarView: View {
                 
         )
         .padding()
+        
+       
     }
 }
 
 struct SearchBarView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
-            SearchBarView()
-                .previewLayout(.sizeThatFits)
-                .preferredColorScheme(.dark)
-            SearchBarView()
-                .previewLayout(.sizeThatFits)
-                .preferredColorScheme(.light)
-        }
+       
+            SearchBarView(searchText: .constant(""))
+     
         
     }
 }

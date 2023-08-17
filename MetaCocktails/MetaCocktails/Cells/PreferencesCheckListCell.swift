@@ -9,21 +9,43 @@ import SwiftUI
 
 struct PreferencesCheckListCell: View {
     
+   
     @State var toggleOn = false
-    let toggleTitle: String
+    @Binding var ingredient: cocktailComponent
+    var isPreferredArray:  Bool
     
     var body: some View {
         HStack {
-            Toggle(toggleTitle, isOn: $toggleOn)
-                .padding(.leading)
-                .padding(.trailing)
+            
+            if self.isPreferredArray == true {
                 
-        }
+            Toggle(isOn: $ingredient.isPreferred) {
+                Text(ingredient.name)
+                
+            }
+            .padding(.horizontal, 20)
+            
+            } else {
+                
+                Toggle(isOn: $ingredient.isUnwanted) {
+                    Text(ingredient.name)
+                    
+                }
+                .padding(.horizontal, 20)
+                
+                
+                
+            }
     }
+    }
+
+    
 }
 
-struct PreferencesCheckListCell_Previews: PreviewProvider {
-    static var previews: some View {
-        PreferencesCheckListCell(toggleTitle: "Blackberries")
-    }
-}
+
+//struct PreferencesCheckListCell_Previews: PreviewProvider {
+//    static var previews: some View {
+//        PreferencesCheckListCell(ingredient: )
+//
+//    }
+//}

@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct MetaCocktailsApp: App {
+    
+    var criteria = SearchCriteriaViewModel()
+    
     var body: some Scene {
         WindowGroup {
             TabBarView()
+                .environmentObject(criteria)
         }
     }
 }

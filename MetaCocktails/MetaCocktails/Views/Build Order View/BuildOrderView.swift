@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BuildOrderView: View {
     
-    //@Binding var isShowingBuildOrder: Bool
+    @Binding var isShowingBuildOrder: Bool
     let buildOrder: String
     
     var body: some View {
@@ -18,9 +18,15 @@ struct BuildOrderView: View {
             Spacer()
             Text(buildOrder)
              .font(.body)
+             .fontWeight(.bold)
              .padding(.leading)
              .padding(.trailing)
         }
+        .overlay(Button {
+            isShowingBuildOrder = false
+        }label: {
+            XDismissButton()
+        }, alignment: .topTrailing)
            
       
         
@@ -29,6 +35,6 @@ struct BuildOrderView: View {
 
 struct BuildOrderView_Previews: PreviewProvider {
     static var previews: some View {
-        BuildOrderView(buildOrder: MockData.daiquiri.buildOrderInstructions ?? "Something went wrong")
+        BuildOrderView(isShowingBuildOrder: .constant(true), buildOrder: MockData.ramos.buildOrderInstructions ?? "Something went wrong")
     }
 }

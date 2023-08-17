@@ -35,20 +35,29 @@ struct RecipeCard: View {
             Spacer()
             if cocktail.buildOrderInstructions != nil {
             
-                Button("Build Order") {
-                    isShowingBuildOrder = true
+                Button(action: {isShowingBuildOrder = true}) {
+                    VStack {
+                        Image(systemName: "list.bullet")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(Color(UIColor.systemGray))
+                        Text("Build")
+                            .fontWeight(.bold)
+                            .foregroundColor(Color(UIColor.systemGray))
+                    }
+      
                 }
+                .modifier(RoundButtonStyle())
+                .padding()
                 .sheet(isPresented: $isShowingBuildOrder) {
-                    BuildOrderView(buildOrder: cocktail.buildOrderInstructions ?? "Something went wrong.")
-                }
-                .modifier(StandardButtonStyle())
-                
+                                    BuildOrderView(isShowingBuildOrder: $isShowingBuildOrder, buildOrder: cocktail.buildOrderInstructions ?? "Something went wrong.")
+                                }
             }
             Spacer()
 
         }
         .frame(width: 340, height: 725)
-        .background(Color(.systemGray5))
+        .background(Color(UIColor.systemBackground))
         .cornerRadius(12)
         .shadow(radius: 40)
         .overlay(Button {
@@ -63,7 +72,7 @@ struct RecipeCard: View {
 
 struct RecipeCard_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeCard(cocktail: MockData.daiquiri, isShowingRecipeCard: .constant(true))
+        RecipeCard(cocktail: MockData.ramos, isShowingRecipeCard: .constant(true))
     }
 }
 

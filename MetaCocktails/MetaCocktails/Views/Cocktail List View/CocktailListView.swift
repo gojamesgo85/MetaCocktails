@@ -23,6 +23,7 @@ struct CocktailListView: View {
                             viewModel.isShowingRecipeCard = true
                             print("tab was tapped")
                             
+                            
                         }
                       
                         
@@ -34,7 +35,7 @@ struct CocktailListView: View {
             .blur(radius: viewModel.isShowingRecipeCard ? 20 : 0)
             if viewModel.isShowingRecipeCard {
                 RecipeCard(cocktail: viewModel.selectedCocktail!, isShowingRecipeCard: $viewModel.isShowingRecipeCard)
-               // RecipeCard(cocktail: viewModel.selectedCocktail!, isShowingBuildOrderView: $viewModel.isShowingBuildOrderButton, isShowingRecipeCard: $viewModel.isShowingRecipeCard)
+             
             }
         }
     }
