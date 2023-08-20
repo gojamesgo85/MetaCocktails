@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ComponentDislikesChecklistView: View {
     
-    
     @EnvironmentObject var viewModel: SearchCriteriaViewModel
     @Binding var isShowingIngredientDislikesList: Bool
     @State private var selectedList: DislikedTypes = .spirits
@@ -17,9 +16,9 @@ struct ComponentDislikesChecklistView: View {
     var body: some View {
         
         NavigationView {
+
             VStack{
-                
-                
+
                 Picker("Choose a preferences list", selection: $selectedList){
                     ForEach(DislikedTypes.allCases, id: \.self) {
                         Text($0.rawValue)
@@ -28,14 +27,10 @@ struct ComponentDislikesChecklistView: View {
                 .pickerStyle(.segmented)
                 .foregroundColor(Color.red)
                 .padding()
-                
-                
-                
+
                 ChosenDislikesListView(selectedType: selectedList)
-                
             }
         }
-        
         .overlay(Button {
             isShowingIngredientDislikesList = false
         }label: {
@@ -43,14 +38,14 @@ struct ComponentDislikesChecklistView: View {
         }, alignment: .topTrailing)
     }
 }
+
 enum DislikedTypes: String, CaseIterable {
     
     case spirits  = "Spirits"
     case profiles = "Profiles"
     case flavors  = "Flavors"
-  
-    
 }
+
 struct ChosenDislikesListView: View {
     
     var selectedType: DislikedTypes

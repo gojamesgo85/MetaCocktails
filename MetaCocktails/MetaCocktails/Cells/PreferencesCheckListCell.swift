@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct PreferencesCheckListCell: View {
-    
-   
+
     @State var toggleOn = false
-    @Binding var ingredient: cocktailComponent
+    @Binding var ingredient: CocktailComponent
     var isPreferredArray:  Bool
     
     var body: some View {
@@ -19,33 +18,26 @@ struct PreferencesCheckListCell: View {
             
             if self.isPreferredArray == true {
                 
-            Toggle(isOn: $ingredient.isPreferred) {
-                Text(ingredient.name)
-                
-            }
-            .padding(.horizontal, 20)
-            
+                Toggle(isOn: $ingredient.isPreferred) {
+                    Text(ingredient.name)
+                }
+                .padding(.horizontal, 20)
+
             } else {
                 
                 Toggle(isOn: $ingredient.isUnwanted) {
                     Text(ingredient.name)
-                    
                 }
                 .padding(.horizontal, 20)
-                
-                
-                
             }
+        }
     }
-    }
-
-    
 }
 
 
-//struct PreferencesCheckListCell_Previews: PreviewProvider {
-//    static var previews: some View {
-//        PreferencesCheckListCell(ingredient: )
-//
-//    }
-//}
+struct PreferencesCheckListCell_Previews: PreviewProvider {
+    static var previews: some View {
+        PreferencesCheckListCell(ingredient: MockData.$mockIngredient, isPreferredArray: true)
+
+    }
+}

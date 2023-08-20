@@ -13,9 +13,4 @@ final class CocktailListViewModel: ObservableObject {
     @Published var isShowingRecipeCard = false
     @Published var selectedCocktail: Cocktail?
     @Published var isShowingBuildOrderButton = false
-    
-    
-    
-    
-    
 }

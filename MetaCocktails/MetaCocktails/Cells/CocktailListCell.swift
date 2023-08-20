@@ -11,16 +11,17 @@ struct CocktailListCell: View {
     let cocktail: Cocktail
     
     var body: some View {
+
         HStack {
             Image(cocktail.imageName)
                 .resizable()
                 .frame(width: 90, height: 90)
                 .cornerRadius(12)
                 .padding()
+
             Text(cocktail.name)
                 .font(.title)
         }
-        
     }
 }
 

@@ -7,16 +7,16 @@
 
 import SwiftUI
 
-
 struct SearchBarView: View {
     
     @Binding var searchText: String
     
-    
     var body: some View {
         HStack {
+
             Image(systemName: "magnifyingglass")
                 .foregroundColor(Color.gray)
+
             TextField("Search for an ingredient...", text: $searchText)
                 .autocorrectionDisabled()
                 .overlay(
@@ -31,7 +31,6 @@ struct SearchBarView: View {
                         }
                     ,alignment: .trailing
                 )
-                
         }
         .font(.headline)
         .padding()
@@ -41,19 +40,17 @@ struct SearchBarView: View {
                 .shadow(
                     color: .gray.opacity(0.5),
                     radius: 10, x: 0, y: 0)
-                
+
         )
         .padding()
-        
-       
     }
 }
 
 struct SearchBarView_Previews: PreviewProvider {
     static var previews: some View {
-       
-            SearchBarView(searchText: .constant(""))
-     
+
+        SearchBarView(searchText: .constant(""))
+
         
     }
 }

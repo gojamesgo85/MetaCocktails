@@ -11,7 +11,7 @@ import SwiftUI
 final class PrepBibleViewModel: ObservableObject {
     
     @Published var isShowingPrepRecipe = false
-    @Published var prepIngredients: [Prep] = [prepItemRecipe.cucumberSyrup, prepItemRecipe.gingerSyrup, prepItemRecipe.orgeat, prepItemRecipe.richDem]
+    @Published var prepIngredients: [Prep] = [PrepItemRecipe.cucumberSyrup, PrepItemRecipe.gingerSyrup, PrepItemRecipe.orgeat, PrepItemRecipe.richDem]
     @Published var selectedPrepIngredient: Prep?
     
     

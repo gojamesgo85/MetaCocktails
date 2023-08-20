@@ -13,26 +13,26 @@ struct RecipeCard: View {
     @Binding var isShowingRecipeCard: Bool
 
     @State private var isShowingBuildOrder = false
-    
-    
+
     var body: some View {
         
         VStack {
+
             Spacer()
             
             Image(cocktail.imageName)
                 .resizable()
                 .frame(width: 150, height: 150)
                 .cornerRadius(12)
-            
-            
+
             VStack {
-                
+
                RecipeIngredientsView(cocktail: cocktail)
                     .fontWeight(.semibold)
- 
             }
+
             Spacer()
+
             if cocktail.buildOrderInstructions != nil {
             
                 Button(action: {isShowingBuildOrder = true}) {
@@ -53,8 +53,8 @@ struct RecipeCard: View {
                                     BuildOrderView(isShowingBuildOrder: $isShowingBuildOrder, buildOrder: cocktail.buildOrderInstructions ?? "Something went wrong.")
                                 }
             }
-            Spacer()
 
+            Spacer()
         }
         .frame(width: 340, height: 725)
         .background(Color(UIColor.systemBackground))

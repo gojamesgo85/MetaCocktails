@@ -7,18 +7,24 @@
 
 import SwiftUI
 
-struct prepListCell: View {
+struct PrepListCell: View {
     
     var prepItem: Prep
     
     var body: some View {
-        Text(prepItem.prepIngredientName)
-            .font(.title)
+
+        HStack {
+
+            Text(prepItem.prepIngredientName)
+                .font(.title)
+
+            Spacer()
+        }
     }
 }
 
 struct prepListCell_Previews: PreviewProvider {
     static var previews: some View {
-        prepListCell(prepItem: prepItemRecipe.cucumberSyrup)
+        PrepListCell(prepItem: PrepItemRecipe.cucumberSyrup)
     }
 }

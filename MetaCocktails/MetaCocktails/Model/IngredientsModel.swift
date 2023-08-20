@@ -7,11 +7,7 @@
 
 import SwiftUI
 
-
-
-
-
-enum cocktailIngredientEnums: String {
+enum CocktailIngredientEnums: String {
     
     case lemon             = "Lemon Juice"
     case lime              = "Lime Juice"
@@ -29,12 +25,12 @@ enum cocktailIngredientEnums: String {
     
 }
 
-enum glassware: String {
+enum Glassware: String {
     case coupe = "Coupe"
     case collins = "Collins"
 }
 
-enum garnish: String {
+enum Garnish: String {
     case orangePeel = "Orange Peel"
     case limeWheel = "Lime Wheel"
 }
