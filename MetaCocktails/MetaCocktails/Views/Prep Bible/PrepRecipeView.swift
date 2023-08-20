@@ -13,24 +13,22 @@ struct PrepRecipeView: View {
     var prepRecipe: String
     
     var body: some View {
-        
-        
+
+        //Let's throw a geometry reader here and only show the dismiss button if the view height is larger than the screen height
+
         ScrollView {
             Text(prepRecipe)
-             .font(.body)
-             .padding(.leading)
-             .padding(.trailing)
-            
-             .padding(40)
-             
+                .font(.body)
+                .padding(.leading)
+                .padding(.trailing)
+                .padding(40)
+
             Button("Dismiss") {
                 isShowingPrepRecipe = false
                 print("did something")
             }
             .modifier(StandardButtonStyle())
-            
         }
-        
         .frame(width: 340, height: 725)
         .background(Color(.systemGray5))
         .cornerRadius(12)
@@ -40,9 +38,7 @@ struct PrepRecipeView: View {
         }label: {
             XDismissButton()
         }, alignment: .topTrailing)
-        
     }
-        
 }
 
 struct PrepRecipeView_Previews: PreviewProvider {

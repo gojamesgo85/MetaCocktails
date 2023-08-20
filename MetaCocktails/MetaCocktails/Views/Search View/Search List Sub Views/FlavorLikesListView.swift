@@ -14,23 +14,17 @@ struct FlavorLikesListView: View {
         
         SearchBarView(searchText: $viewModel.searchText)
                 .navigationTitle("Flavor Preferences")
+
             List {
-                
                 ForEach($viewModel.cocktailComponents) { ingredient in
-                    
                     if ingredient.isUnwanted.wrappedValue == false && ingredient.isFlavor.wrappedValue == true {
-                        
                         PreferencesCheckListCell(ingredient: ingredient, isPreferredArray: true)
                     }
                 }
             }
-            
             .listStyle(.plain)
             Spacer()
-            
-    }
-    
-    
+    } 
 }
 
 struct FlavorLikesListView_Previews: PreviewProvider {

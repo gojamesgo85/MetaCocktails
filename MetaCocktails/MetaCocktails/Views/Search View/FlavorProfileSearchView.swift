@@ -8,20 +8,17 @@
 import SwiftUI
 
 struct FlavorProfileSearchView: View {
-    
-    
+
     @EnvironmentObject var criteria: SearchCriteriaViewModel
-    
-    
+
     @State var isShowingIngredientsList = false
     @State var isShowingIngredientDislikesList = false
     @State var isShowingCocktailStyle = false
-    @State var preferredIngredients: [cocktailComponentEnums] = []
+    @State var preferredIngredients: [CocktailComponentEnum] = []
     
     var roundButtonFrameSize = CGFloat(20)
     
     var body: some View {
-        
         
         VStack{
             List(criteria.selectedPreferredIngredients()){ criteria in
@@ -31,25 +28,20 @@ struct FlavorProfileSearchView: View {
                         .foregroundColor(Color.brandPrimaryGreen)
                 }
             }
+
             List(criteria.selectedUnwantedIngredients()) { criteria in
                 
                 if criteria.isUnwanted {
                     Text("- \(criteria.name)")
                         .foregroundColor(Color.brandPrimaryRed)
                 }
-                
             }
-            
-            
-            
+
             Button(action: {
                 for i in 0..<criteria.cocktailComponents.count {
                     criteria.cocktailComponents[i].isPreferred = false
                     criteria.cocktailComponents[i].isUnwanted = false
-                    
                 }
-                
-                
             }) {
                 Text("Clear Search")
                     .fontWeight(.bold)
@@ -57,10 +49,8 @@ struct FlavorProfileSearchView: View {
             .padding(10)
             .background(Color(UIColor.systemBackground))
             .clipShape(RoundedRectangle(cornerRadius: 20))
-            
             .shadow(color: Color(UIColor.systemGray), radius: 10, x: 0, y: 0)
-            
-            
+
             HStack {
                 
                 Button(action: {isShowingIngredientsList = true} ) {
@@ -82,12 +72,10 @@ struct FlavorProfileSearchView: View {
                     .foregroundColor(Color.brandPrimaryGreen)
                     
                 }
-                
                 .sheet(isPresented: $isShowingIngredientsList) {
-                   
-                    
-                    ComponentLikesChecklistView(viewModel: _criteria, isShowingIngredientsList: $isShowingIngredientsList)
+                    ComponentLikesChecklistView(isShowingIngredientsList: $isShowingIngredientsList)
                 }
+
                 Button(action: {}) {
                     VStack {
                         Image(systemName: "magnifyingglass")
@@ -96,9 +84,7 @@ struct FlavorProfileSearchView: View {
                         Text("Search")
                             .fontWeight(.bold)
                     }
-                    
                 }
-                
                 .modifier(RoundButtonStyle())
               
                 Button(action: {isShowingIngredientDislikesList = true} ) {
@@ -114,16 +100,10 @@ struct FlavorProfileSearchView: View {
                     .foregroundColor(Color.brandPrimaryRed)
                     
                 }
-                
                 .sheet(isPresented: $isShowingIngredientDislikesList) {
-                    ComponentDislikesChecklistView(viewModel: _criteria, isShowingIngredientDislikesList: $isShowingIngredientDislikesList)
+                    ComponentDislikesChecklistView(isShowingIngredientDislikesList: $isShowingIngredientDislikesList)
                 }
-                
-                
             }
-            
-                
-  
             .padding()
         }
     }

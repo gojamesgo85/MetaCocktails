@@ -15,17 +15,16 @@ struct ProfileLikesListView: View {
         
         SearchBarView(searchText: $query)
                 .navigationTitle("Profile Preferences")
+
             List {
-                
                 ForEach($viewModel.cocktailComponents) { ingredient in
-                    
                     if ingredient.isUnwanted.wrappedValue == false && ingredient.isProfile.wrappedValue == true {
-                        
                         PreferencesCheckListCell(ingredient: ingredient, isPreferredArray: true)
                     }
                 }
             }
             .listStyle(.plain)
+        
             Spacer()
 //            .onAppear{
 //                viewModel.search()

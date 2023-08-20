@@ -13,11 +13,9 @@ struct Prep: Identifiable {
     var id: Int
     var prepIngredientName: String
     var prepRecipe: String
-    
-    
 }
 
-struct prepItemRecipe: Identifiable {
+struct PrepItemRecipe: Identifiable {
     var id = UUID()
     
     static let richDem = Prep(id: 034, prepIngredientName: "Rich Demerara Syrup", prepRecipe: "Make a rich syrup")
@@ -27,7 +25,4 @@ struct prepItemRecipe: Identifiable {
     static let gingerSyrup = Prep(id: 036, prepIngredientName: "Ginger Syrup", prepRecipe: PrepRecipeDescriptions.gingerSyrupRecipe)
     
     static let orgeat = Prep(id: 037, prepIngredientName: "Orgeat", prepRecipe: "Make orgeat, orNot.")
-    
-    
-    
 }

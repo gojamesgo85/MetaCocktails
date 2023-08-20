@@ -14,12 +14,10 @@ struct ProfileDislikesListView: View {
         
             SearchBarView(searchText: $viewModel.searchText)
                 .navigationTitle("Profile Dislikes")
+
             List {
-                
                 ForEach($viewModel.cocktailComponents) { ingredient in
-                    
                     if ingredient.isPreferred.wrappedValue == false && ingredient.isProfile.wrappedValue == true {
-                        
                         PreferencesCheckListCell(ingredient: ingredient, isPreferredArray: false)
                             .tint(.red)
                     }

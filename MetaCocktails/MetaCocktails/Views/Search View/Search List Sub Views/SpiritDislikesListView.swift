@@ -19,11 +19,8 @@ struct SpiritDislikesListView: View {
 //                viewModel.search(with: newQuery)
 //            }
         List {
-            
             ForEach($viewModel.cocktailComponents) { ingredient in
-                
                 if ingredient.isPreferred.wrappedValue == false && ingredient.isSpirit.wrappedValue == true{
-                    
                     PreferencesCheckListCell(ingredient: ingredient, isPreferredArray: false)
                         .tint(.red)
                 }
@@ -37,6 +34,7 @@ struct SpiritDislikesListView: View {
         
     }
 }
+
 struct SpiritDislikesListView_Previews: PreviewProvider {
     static var previews: some View {
         SpiritDislikesListView()

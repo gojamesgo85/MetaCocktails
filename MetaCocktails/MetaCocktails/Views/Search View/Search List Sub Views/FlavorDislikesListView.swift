@@ -14,12 +14,10 @@ struct FlavorDislikesListView: View {
         
             SearchBarView(searchText: $viewModel.searchText)
                 .navigationTitle("Flavor Dislikes")
+
             List {
-                
                 ForEach($viewModel.cocktailComponents) { ingredient in
-                    
                     if ingredient.isPreferred.wrappedValue == false && ingredient.isFlavor.wrappedValue == true {
-                        
                         PreferencesCheckListCell(ingredient: ingredient, isPreferredArray: false)
                             .tint(.red)
                     }
@@ -27,9 +25,7 @@ struct FlavorDislikesListView: View {
             }
             .listStyle(.plain)
             Spacer()
-    }
-    
-    
+    } 
 }
 struct FlavorDislikesListView_Previews: PreviewProvider {
     static var previews: some View {

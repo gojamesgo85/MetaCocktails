@@ -15,7 +15,9 @@ struct BuildOrderView: View {
     var body: some View {
   
         ScrollView {
+
             Spacer()
+
             Text(buildOrder)
              .font(.body)
              .fontWeight(.bold)
@@ -26,10 +28,7 @@ struct BuildOrderView: View {
             isShowingBuildOrder = false
         }label: {
             XDismissButton()
-        }, alignment: .topTrailing)
-           
-      
-        
+        }, alignment: .topTrailing) 
     }
 }
 

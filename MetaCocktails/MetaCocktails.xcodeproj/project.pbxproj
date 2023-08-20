@@ -41,7 +41,7 @@
 		1AC830E12A8419DA00FCE1DA /* RecipeIngredientsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC830E02A8419DA00FCE1DA /* RecipeIngredientsView.swift */; };
 		1AC830E52A84349200FCE1DA /* BuildOrderDescriptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC830E42A84349200FCE1DA /* BuildOrderDescriptions.swift */; };
 		1AC830EE2A8447C000FCE1DA /* PrepBibleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC830ED2A8447C000FCE1DA /* PrepBibleViewModel.swift */; };
-		1AC830F02A844D8900FCE1DA /* prepListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC830EF2A844D8900FCE1DA /* prepListCell.swift */; };
+		1AC830F02A844D8900FCE1DA /* PrepListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC830EF2A844D8900FCE1DA /* PrepListCell.swift */; };
 		1AF2610E2A8C685D00D88373 /* SpiritLikesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF2610D2A8C685D00D88373 /* SpiritLikesListView.swift */; };
 		1AF261102A8C694200D88373 /* SpiritDislikesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF2610F2A8C694200D88373 /* SpiritDislikesListView.swift */; };
 		1AF261122A8C6A7700D88373 /* ProfileLikesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AF261112A8C6A7700D88373 /* ProfileLikesListView.swift */; };
@@ -112,7 +112,7 @@
 		1AC830E02A8419DA00FCE1DA /* RecipeIngredientsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeIngredientsView.swift; sourceTree = "<group>"; };
 		1AC830E42A84349200FCE1DA /* BuildOrderDescriptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildOrderDescriptions.swift; sourceTree = "<group>"; };
 		1AC830ED2A8447C000FCE1DA /* PrepBibleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepBibleViewModel.swift; sourceTree = "<group>"; };
-		1AC830EF2A844D8900FCE1DA /* prepListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = prepListCell.swift; sourceTree = "<group>"; };
+		1AC830EF2A844D8900FCE1DA /* PrepListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepListCell.swift; sourceTree = "<group>"; };
 		1AF2610D2A8C685D00D88373 /* SpiritLikesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritLikesListView.swift; sourceTree = "<group>"; };
 		1AF2610F2A8C694200D88373 /* SpiritDislikesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiritDislikesListView.swift; sourceTree = "<group>"; };
 		1AF261112A8C6A7700D88373 /* ProfileLikesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLikesListView.swift; sourceTree = "<group>"; };
@@ -142,12 +142,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1A2F0F7B2A857556006FE24C /* Componants */ = {
+		1A2F0F7B2A857556006FE24C /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				1A2F0F7D2A857581006FE24C /* SearchBarView.swift */,
 			);
-			path = Componants;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		1AC8308B2A829D1000FCE1DA = {
@@ -172,7 +172,7 @@
 		1AC830962A829D1000FCE1DA /* MetaCocktails */ = {
 			isa = PBXGroup;
 			children = (
-				1A2F0F7B2A857556006FE24C /* Componants */,
+				1A2F0F7B2A857556006FE24C /* Components */,
 				1AC830D92A83F81700FCE1DA /* Utilities */,
 				1AC830D02A82ED5D00FCE1DA /* Buttons */,
 				1AC830CF2A82EC1E00FCE1DA /* EntryPoint */,
@@ -242,7 +242,7 @@
 			isa = PBXGroup;
 			children = (
 				1AC830C72A82D69C00FCE1DA /* CocktailListCell.swift */,
-				1AC830EF2A844D8900FCE1DA /* prepListCell.swift */,
+				1AC830EF2A844D8900FCE1DA /* PrepListCell.swift */,
 				1A2F0F792A857038006FE24C /* PreferencesCheckListCell.swift */,
 			);
 			path = Cells;
@@ -445,7 +445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1AC830F02A844D8900FCE1DA /* prepListCell.swift in Sources */,
+				1AC830F02A844D8900FCE1DA /* PrepListCell.swift in Sources */,
 				1AC830E52A84349200FCE1DA /* BuildOrderDescriptions.swift in Sources */,
 				1AC830D82A83F6BF00FCE1DA /* FlavorProfileSearchView.swift in Sources */,
 				1AC830CE2A82E57700FCE1DA /* CocktailListViewModel.swift in Sources */,
@@ -625,7 +625,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MetaCocktails/Preview Content\"";
-				DEVELOPMENT_TEAM = WK23NQPJ9R;
+				DEVELOPMENT_TEAM = 5P5V4X77XJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -656,7 +656,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MetaCocktails/Preview Content\"";
-				DEVELOPMENT_TEAM = WK23NQPJ9R;
+				DEVELOPMENT_TEAM = 5P5V4X77XJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -685,7 +685,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WK23NQPJ9R;
+				DEVELOPMENT_TEAM = 5P5V4X77XJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MetaCocktailWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MetaCocktailWidget;
@@ -712,7 +712,7 @@
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = WK23NQPJ9R;
+				DEVELOPMENT_TEAM = 5P5V4X77XJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MetaCocktailWidget/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MetaCocktailWidget;

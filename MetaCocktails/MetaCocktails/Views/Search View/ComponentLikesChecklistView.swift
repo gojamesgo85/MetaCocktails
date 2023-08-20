@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct ComponentLikesChecklistView: View {
-    
-    
+
     @EnvironmentObject var viewModel: SearchCriteriaViewModel
     @Binding var isShowingIngredientsList: Bool
     @State private var selectedList: PreferenceType = .spirits
@@ -17,6 +16,7 @@ struct ComponentLikesChecklistView: View {
     var body: some View {
         
         NavigationView {
+
             VStack{
                 Picker("Choose a preferences list", selection: $selectedList){
                     ForEach(PreferenceType.allCases, id: \.self) {
@@ -29,7 +29,6 @@ struct ComponentLikesChecklistView: View {
                 ChosenLikesListView(selectedLikesType: selectedList)
             }
         }
-        
         .overlay(Button {
             isShowingIngredientsList = false
         }label: {
@@ -37,13 +36,13 @@ struct ComponentLikesChecklistView: View {
         }, alignment: .topTrailing)
     }
 }
+
 enum PreferenceType: String, CaseIterable {
     
     case spirits  = "Spirits"
     case profiles = "Profiles"
     case flavors  = "Flavors"
     case style    = "Style"
-    
 }
 
 struct ChosenLikesListView: View {
