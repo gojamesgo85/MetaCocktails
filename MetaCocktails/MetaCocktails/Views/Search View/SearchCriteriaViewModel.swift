@@ -46,6 +46,27 @@ final class SearchCriteriaViewModel: ObservableObject {
                                            CocktailComponent(name: CocktailComponentEnum.tart.rawValue, isProfile: true),
                                            CocktailComponent(name: CocktailComponentEnum.vodka.rawValue, isSpirit: true),
                                            CocktailComponent(name: CocktailComponentEnum.whiteRum.rawValue, isSpirit: true)]
+
+    func matchAllTheThings() {
+
+        // if searchText is empty, show everything again
+        if searchText == "" {
+            for cocktail in cocktailComponents {
+                cocktail.matchesCurrentSearch = true
+            }
+            self.objectWillChange.send() // this forces an update when the search bar is empty, instead of waiting for the user to hit return
+            return
+        }
+
+        // if searchText has text, match it and set the viewModel properties accordingly
+        for cocktail in cocktailComponents {
+            if cocktail.name.contains(searchText) {
+                cocktail.matchesCurrentSearch = true
+            } else {
+                cocktail.matchesCurrentSearch = false
+            }
+        }
+    }
     
     func search(with query: String = "") {
         filteredComponents = query.isEmpty ? cocktailComponents : cocktailComponents.filter { $0.name.localizedCaseInsensitiveContains(query)}
@@ -68,16 +89,26 @@ final class SearchCriteriaViewModel: ObservableObject {
     }
 }
 
-struct CocktailComponent: Identifiable {
-    
+class CocktailComponent: Identifiable, ObservableObject {
+
+    init(name: String, isFlavor: Bool = false, isProfile: Bool = false, isStyle: Bool = false, isSpirit: Bool = false, matchesCurrentSearch: Bool = true) {
+        self.name = name
+        self.isSpirit = isSpirit
+        self.isFlavor = isFlavor
+        self.isStyle = isStyle
+        self.isProfile = isProfile
+        self.matchesCurrentSearch = matchesCurrentSearch
+    }
+
+    @Published var matchesCurrentSearch: Bool
     var id = UUID()
     var name: String
     var isPreferred: Bool = false
     var isUnwanted: Bool = false
-    var isSpirit: Bool = false
-    var isFlavor: Bool  = false
-    var isProfile: Bool = false
-    var isStyle: Bool = false
+    var isSpirit: Bool
+    var isFlavor: Bool
+    var isProfile: Bool
+    var isStyle: Bool
  
 }
 

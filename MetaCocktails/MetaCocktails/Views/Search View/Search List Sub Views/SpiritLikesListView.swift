@@ -13,19 +13,18 @@ struct SpiritLikesListView: View {
 
     
     @EnvironmentObject var viewModel: SearchCriteriaViewModel
-    @State private var query = ""
 
     var body: some View {
         
-        SearchBarView(searchText: $query)
+        SearchBarView(searchText: $viewModel.searchText)
             .navigationTitle("Spirit Preferences")
-            .onChange(of: query) { newValue in
-                viewModel.search(with: newValue)
+            .onChange(of: viewModel.searchText) { _ in // we could pass newValue here, but since its synced with the viewModel's searchText we can just use that in the match function
+                viewModel.matchAllTheThings()
             }
 
         List {
             ForEach($viewModel.cocktailComponents) { ingredient in
-                    if ingredient.isUnwanted.wrappedValue == false && ingredient.isSpirit.wrappedValue {
+                if ingredient.isUnwanted.wrappedValue == false && ingredient.isSpirit.wrappedValue && ingredient.matchesCurrentSearch.wrappedValue {
                         PreferencesCheckListCell(ingredient: ingredient, isPreferredArray: true)
                     }
                 }
