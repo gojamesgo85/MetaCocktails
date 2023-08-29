@@ -10,7 +10,7 @@ import SwiftUI
 final class SearchCriteriaViewModel: ObservableObject {
 
     @Published var searchText: String = ""
-    @Published var filteredComponents = [CocktailComponent]()
+    @Published var brandPrimaryColors = [Color.brandPrimaryYellow, Color.brandPrimaryOrange, Color.brandPrimaryRed, Color.brandPrimaryPurple, Color.brandPrimaryBlue]
 
     @Published var cocktailComponents  =  [CocktailComponent(name: CocktailComponentEnum.agedRum.rawValue, isSpirit: true),
                                            CocktailComponent(name: CocktailComponentEnum.shaken.rawValue, isStyle: true),
@@ -47,14 +47,20 @@ final class SearchCriteriaViewModel: ObservableObject {
                                            CocktailComponent(name: CocktailComponentEnum.vodka.rawValue, isSpirit: true),
                                            CocktailComponent(name: CocktailComponentEnum.whiteRum.rawValue, isSpirit: true)]
 
+    func printComponents() {
+        for cocktailComponent in cocktailComponents {
+            print(cocktailComponent.preferenceType.rawValue)
+        }
+    }
     func matchAllTheThings() {
-
+        printComponents()
         // if searchText is empty, show everything again
         if searchText == "" {
             for cocktail in cocktailComponents {
                 cocktail.matchesCurrentSearch = true
             }
-            self.objectWillChange.send() // this forces an update when the search bar is empty, instead of waiting for the user to hit return
+             // this forces an update when the search bar is empty, instead of waiting for the user to hit return
+            self.objectWillChange.send()
             return
         }
 
@@ -66,12 +72,13 @@ final class SearchCriteriaViewModel: ObservableObject {
                 cocktail.matchesCurrentSearch = false
             }
         }
+        self.objectWillChange.send()
     }
     
-    func search(with query: String = "") {
-        filteredComponents = query.isEmpty ? cocktailComponents : cocktailComponents.filter { $0.name.localizedCaseInsensitiveContains(query)}
-    }
     
+
+    
+ 
     func selectedPreferredIngredients() -> [CocktailComponent] {
         self.cocktailComponents.filter({ $0.isPreferred})
     }
@@ -98,6 +105,16 @@ class CocktailComponent: Identifiable, ObservableObject {
         self.isStyle = isStyle
         self.isProfile = isProfile
         self.matchesCurrentSearch = matchesCurrentSearch
+        
+        if isFlavor {
+            preferenceType = .flavors
+        } else if isStyle {
+            preferenceType = .style
+        } else if isSpirit {
+            preferenceType = .spirits
+        } else {
+            preferenceType = .profiles
+        }     
     }
 
     @Published var matchesCurrentSearch: Bool
@@ -109,12 +126,13 @@ class CocktailComponent: Identifiable, ObservableObject {
     var isFlavor: Bool
     var isProfile: Bool
     var isStyle: Bool
+    var preferenceType: PreferenceType
  
 }
 
 enum CocktailComponentEnum: String {
     
-    /// FLAVORS
+    /// Ingredients
     case lemon          = "Lemon"
     case lime           = "Lime"
     case cream          = "Heavy Cream"
@@ -133,6 +151,7 @@ enum CocktailComponentEnum: String {
     case blackStrapRum  = "Black Strap Rum"
     case rum            = "Rum"
     case vodka          = "Vodka"
+    case ryeWhiskey     = "Rye Whiskey"
     
     /// PROFILES
     case tart           = "Tart"
@@ -157,4 +176,62 @@ enum CocktailComponentEnum: String {
     case fizz           = "Like a fizz"
     case lastWord       = "Last Word Variation"
 }
+
+struct SearchTags {
+    
+    enum Flavor: String {
+        
+        case lemon          = "Lemon"
+        case lime           = "Lime"
+        case cream          = "Heavy Cream"
+        case orange         = "Orange"
+        case eggWhites      = "Egg Whites"
+        case ginger         = "Ginger"
+        case honey          = "Honey"
+        case passionfruit   = "Passionfruit"
+        case cucumber       = "Cucumber"
+        case almond         = "Almond"
+        
+    }
+
+    enum Texture: String {
+        
+        case creamy = "Creamy"
+    }
+
+    enum Style: String {
+        
+        case shaken         = "Shaken"
+        case stirred        = "Stirred"
+        case martini        = "Martini Variation"
+        case oldFashioned   = "Old Fashioned Variation"
+        case negroni        = "Negroni Variation"
+        case sour           = "Like a sour"
+        case fizz           = "Like a fizz"
+        case lastWord       = "Last Word Variation"
+        
+    }
+
+    enum Profile: String {
+        
+        case tart           = "Tart"
+        case sweet          = "Sweet"
+        case bitter         = "Bitter"
+        case spicy          = "Spicy"
+        case citrusy        = "Citrusy"
+        case aromatic       = "Aromatic"
+        case floral         = "Floral"
+        case fruity         = "Fruity"
+        case creamy         = "Creamy"
+        case bubbly         = "Bubbly"
+        case silky          = "Silky (Egg whites)"
+        
+    }
+
+    
+    
+}
+
+
+
 

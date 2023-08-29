@@ -13,22 +13,30 @@ struct BuildOrderView: View {
     let buildOrder: String
     
     var body: some View {
-  
-        ScrollView {
-
-            Spacer()
-
-            Text(buildOrder)
-             .font(.body)
-             .fontWeight(.bold)
-             .padding(.leading)
-             .padding(.trailing)
+        NavigationStack {
+            VStack{
+                
+                ScrollView {
+                    
+                    
+                    Spacer()
+                    Text(buildOrder)
+                        .font(.body)
+                        .fontWeight(.bold)
+                        .padding(.leading)
+                        .padding(.trailing)
+                }
+                
+                
+            }
+            .navigationTitle("Build Order")
+            
         }
         .overlay(Button {
             isShowingBuildOrder = false
         }label: {
             XDismissButton()
-        }, alignment: .topTrailing) 
+        }, alignment: .topTrailing)
     }
 }
 

@@ -28,11 +28,13 @@ enum CocktailIngredientEnums: String {
 enum Glassware: String {
     case coupe = "Coupe"
     case collins = "Collins"
+    case doubleOld = "Double Old Fashioned"
 }
 
 enum Garnish: String {
     case orangePeel = "Orange Peel"
     case limeWheel = "Lime Wheel"
+    
 }
 
 

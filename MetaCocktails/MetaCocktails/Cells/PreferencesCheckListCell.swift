@@ -11,12 +11,12 @@ struct PreferencesCheckListCell: View {
 
     @State var toggleOn = false
     @Binding var ingredient: CocktailComponent
-    var isPreferredArray:  Bool
+    var isShowingPreferences:  Bool
     
     var body: some View {
         HStack {
             
-            if self.isPreferredArray == true {
+            if self.isShowingPreferences == true {
                 
                 Toggle(isOn: $ingredient.isPreferred) {
                     Text(ingredient.name)
@@ -37,7 +37,7 @@ struct PreferencesCheckListCell: View {
 
 struct PreferencesCheckListCell_Previews: PreviewProvider {
     static var previews: some View {
-        PreferencesCheckListCell(ingredient: MockData.$mockIngredient, isPreferredArray: true)
+        PreferencesCheckListCell(ingredient: MockData.$mockIngredient, isShowingPreferences: true)
 
     }
 }

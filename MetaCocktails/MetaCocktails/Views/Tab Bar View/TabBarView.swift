@@ -12,8 +12,8 @@ struct TabBarView: View {
 
         TabView {
 
-            FlavorProfileSearchView()
-                .tabItem { Label("Search", systemImage: "magnifyingglass.circle.fill") }
+//            FlavorProfileSearchView()
+//                .tabItem { Label("Search", systemImage: "magnifyingglass.circle.fill") }
 
            CocktailListView()
                 .tabItem { Label("A-Z", systemImage: "list.bullet") }

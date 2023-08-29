@@ -22,7 +22,8 @@ struct RecipeCard: View {
             
             Image(cocktail.imageName)
                 .resizable()
-                .frame(width: 150, height: 150)
+                .frame(width: 120, height: 120)
+                .background(cocktail.backgroundColor)
                 .cornerRadius(12)
 
             VStack {
