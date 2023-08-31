@@ -1,14 +1,21 @@
 //
-//  IngredientsModel.swift
+//  Ingredient.swift
 //  MetaCocktails
 //
-//  Created by James on 8/12/23.
+//  Created by Matthew Hunt on 8/30/23.
 //
 
-import SwiftUI
+import Foundation
 
-enum CocktailIngredientEnums: String {
-    
+struct Ingredient: Identifiable {
+    let id = UUID()
+    let name: IngredientName
+    let value: Double
+    let unit: MeasurementUnit
+}
+
+enum IngredientName: String {
+
     case lemon             = "Lemon Juice"
     case lime              = "Lime Juice"
     case cream             = "Heavy Cream"
@@ -22,24 +29,15 @@ enum CocktailIngredientEnums: String {
     case passionfruitSyrup = "Passionfruit Syrup"
     case cucumberSyrup     = "Cucumber Syrup"
     case orgeat            = "Orgeat"
-    
 }
 
-enum Glassware: String {
-    case coupe = "Coupe"
-    case collins = "Collins"
-    case doubleOld = "Double Old Fashioned"
+enum MeasurementUnit: String {
+    case grams          = "grams"
+    case fluidOunces    = "oz"
+    case teaspoons      = "tsp"
+    case disc           = "disc, with flesh"
+    case limeQuarters   = "lime, quartered"
+    case slices         = "slices"
 }
-
-enum Garnish: String {
-    case orangePeel = "Orange Peel"
-    case limeWheel = "Lime Wheel"
-    
-}
-
-
-
-
-
 
 

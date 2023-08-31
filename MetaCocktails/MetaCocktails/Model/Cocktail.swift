@@ -9,28 +9,22 @@ import SwiftUI
 
 struct Cocktail: Identifiable {
     
-    let id: Int
-    let glasswareType: String
+    let id = UUID()
     let name: String
-    let imageName: String
+
+    let image: CocktailImage
+    let backgroundColor: Color
+
+    let glasswareType: Components.Glassware
+    let garnish: String
+
+    let ingredients: [Components.Ingredient]
     let buildOrderInstructions: String?
-    let ingredients: [CocktailIngredient]
+
     let flavors = [SearchTags.Flavor]()
     let styles = [SearchTags.Style]()
     let textures = [SearchTags.Texture]()
     let profiles = [SearchTags.Profile]()
-    
-    let garnish: String
-    let backgroundColor: Color
-    
-}
-
-
-struct CocktailIngredient: Identifiable {
-    
-    var id = UUID()
-    let name: String
-    let value: Double
 }
 
 struct MockData: Identifiable {
@@ -39,57 +33,44 @@ struct MockData: Identifiable {
 
     @State static var mockIngredient: CocktailComponent = CocktailComponent(name: "Mock Ingredient")
 
-    static let daiquiri = Cocktail(id: 0001,
-                                   glasswareType: Glassware.coupe.rawValue,
-                                   name: "Daiquiri",
-                                   imageName: "DaiquiriNoBackground",
-                                   buildOrderInstructions: nil,
-                                   ingredients: [CocktailIngredient(name: CocktailComponentEnum.whiteRum.rawValue, value: 2.0),
-                                                 CocktailIngredient(name: CocktailIngredientEnums.lime.rawValue, value: 0.75),
-                                                 CocktailIngredient(name: CocktailIngredientEnums.simple.rawValue, value: 0.75)],
-                                
-                                   garnish: Garnish.limeWheel.rawValue, backgroundColor: Color.brandPrimaryYellow)
-
-    static let ramos = Cocktail(id: 0002,
-                                glasswareType: Glassware.collins.rawValue,
-                                name: "Ramos Gin Fizz",
-                                imageName: "RamosNoBackground",
-                                buildOrderInstructions: BuildOrderDescriptions.ramosBuild,
-                                ingredients: [CocktailIngredient(name: CocktailComponentEnum.gin.rawValue, value: 2.0),
-                                              CocktailIngredient(name: CocktailIngredientEnums.lime.rawValue, value: 0.5),
-                                              CocktailIngredient(name: CocktailIngredientEnums.lemon.rawValue, value: 0.5),
-                                              CocktailIngredient(name: CocktailIngredientEnums.simple.rawValue, value: 1.0),
-                                              CocktailIngredient(name: CocktailIngredientEnums.cream.rawValue, value: 1.0),
-                                              CocktailIngredient(name: CocktailIngredientEnums.eggWhites.rawValue, value: 1.25),
-                                              CocktailIngredient(name: CocktailIngredientEnums.sodaWater.rawValue, value: 2.0),
-                                              CocktailIngredient(name: CocktailIngredientEnums.orangeFlowerWater.rawValue, value: 0.01)],
-                                garnish: Garnish.orangePeel.rawValue, backgroundColor: Color.brandPrimaryBlue)
-    
-    static let blackberrySageSmash = Cocktail(id: 0003,
-                                              glasswareType: Glassware.doubleOld.rawValue,
-                                              name: "Blackberry Sage Smash",
-                                              imageName: "BBSSNoBackground",
-                                              buildOrderInstructions: BuildOrderDescriptions.bBSSBuild,
-                                              ingredients: [CocktailIngredient(name: CocktailComponentEnum.ryeWhiskey.rawValue, value: 2.0),
-                                                            CocktailIngredient(name: CocktailIngredientEnums.lemon.rawValue, value: 0.75),
-                                                            CocktailIngredient(name: CocktailIngredientEnums.simple.rawValue, value: 0.75),],
-                                              garnish: "Blackberry and a sage leaf.", backgroundColor: Color.brandPrimaryRed)
-}
+//    static let daiquiri = Cocktail(
+//                                   glasswareType: .coupe,
+//                                   name: "Daiquiri",
+//                                   image: CocktailImage(imageName: "DaiquiriNoBackground"),
+//                                   buildOrderInstructions: nil,
+//                                   ingredients: [CocktailIngredient(name: CocktailComponentEnum.whiteRum.rawValue, value: 2.0),
+//                                                 CocktailIngredient(name: IngredientName.lime.rawValue, value: 0.75),
+//                                                 CocktailIngredient(name: IngredientName.simple.rawValue, value: 0.75)],
+//
+//                                   garnish: Garnish.limeWheel.rawValue, backgroundColor: Color.brandPrimaryYellow)
+//
+//    static let ramos = Cocktail(
+//                                glasswareType: .collins,
+//                                name: "Ramos Gin Fizz",
+//                                image: CocktailImage(imageName:"RamosNoBackground"),
+//                                buildOrderInstructions: BuildOrderDescriptions.ramosBuild,
+//                                ingredients: [CocktailIngredient(name: CocktailComponentEnum.gin.rawValue, value: 2.0),
+//                                              CocktailIngredient(name: IngredientName.lime.rawValue, value: 0.5),
+//                                              CocktailIngredient(name: IngredientName.lemon.rawValue, value: 0.5),
+//                                              CocktailIngredient(name: IngredientName.simple.rawValue, value: 1.0),
+//                                              CocktailIngredient(name: IngredientName.cream.rawValue, value: 1.0),
+//                                              CocktailIngredient(name: IngredientName.eggWhites.rawValue, value: 1.25),
+//                                              CocktailIngredient(name: IngredientName.sodaWater.rawValue, value: 2.0),
+//                                              CocktailIngredient(name: IngredientName.orangeFlowerWater.rawValue, value: 0.01)],
+//                                garnish: Garnish.orangePeel.rawValue, backgroundColor: Color.brandPrimaryBlue)
+//
+//    static let blackberrySageSmash = Cocktail(
+//                                              glasswareType: .doubleOld,
+//                                              name: "Blackberry Sage Smash",
+//                                              image: CocktailImage((imageName: "BBSSNoBackground"),
+//                                              buildOrderInstructions: BuildOrderDescriptions.bBSSBuild,
+//                                              ingredients: [CocktailIngredient(name: CocktailComponentEnum.ryeWhiskey.rawValue, value: 2.0),
+//                                                            CocktailIngredient(name: IngredientName.lemon.rawValue, value: 0.75),
+//                                                            CocktailIngredient(name: IngredientName.simple.rawValue, value: 0.75),],
+//                                              garnish: "Blackberry and a sage leaf.", backgroundColor: Color.brandPrimaryRed)
+//}
 
 /// Some weird cocktails:
-
-//Pornstar Martini
-
-//* 1.5 oz Vodka 
-//* 0.5 oz Giffard Passion Fruit Liqueur 
-//* 0.75 oz Lime Juice 
-//* 0.5 oz Vanilla syrup 
-//* 0.25 oz Passion Fruit syrup 
-//
-//Method: Shake
-//Glassware: Coupe
-//Garnish: 2 oz of Sparkling Wine in shot glass on side.
-//Origin: Douglas Ankrah, Townhouse Bar, London, Early 00s
 
 
 //El Guapo
@@ -104,16 +85,7 @@ struct MockData: Identifiable {
 //garnish: salt and cracked black pepper
 
 
-//Gordon’s Cup
-//
-//* 2 oz London Dry Gin 
-//* 1/2 Lime quartered 
-//* 0.75 oz Simple Syrup 
-//* 3 slices cucumber 
-//
-//method: muddle / shake / dump
-//glassware: double old fashioned
-//garnish: salt and cracked black pepper
+
 
 
 //Breakfast Martini
