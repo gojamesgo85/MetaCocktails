@@ -14,11 +14,7 @@ struct CocktailListCell: View {
     var body: some View {
 
         HStack {
-            Image(cocktail.imageName)
-                .resizable()
-                .frame(width: 90, height: 90)
-                .background(backgroundColor)
-                .cornerRadius(12)
+            cocktail.image // new type we created that handles all the formatting
             Text(cocktail.name)
                 .font(.title)
                 .fontDesign(.serif)
@@ -29,6 +25,6 @@ struct CocktailListCell: View {
 
 struct CocktailListCell_Previews: PreviewProvider {
     static var previews: some View {
-        CocktailListCell(cocktail: MockData.daiquiri, backgroundColor: Color.brandPrimaryRed )
+        CocktailListCell(cocktail: daiquiri, backgroundColor: Color.brandPrimaryRed )
     }
 }

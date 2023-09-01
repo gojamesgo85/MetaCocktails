@@ -10,7 +10,7 @@ import SwiftUI
 struct BuildOrderView: View {
     
     @Binding var isShowingBuildOrder: Bool
-    let buildOrder: String
+    let buildOrder: Build
     
     var body: some View {
         NavigationStack {
@@ -18,16 +18,21 @@ struct BuildOrderView: View {
                 
                 ScrollView {
                     
+                    //Formatting will be all messed up, but the data should show
                     
                     Spacer()
-                    Text(buildOrder)
+                    
+                    ForEach(buildOrder.instructions) { build in
+                        HStack {
+                            Text(String(build.step))
+                            Text(build.method)
+                        }
                         .font(.body)
                         .fontWeight(.bold)
                         .padding(.leading)
                         .padding(.trailing)
+                    }
                 }
-                
-                
             }
             .navigationTitle("Build Order")
             
@@ -42,6 +47,6 @@ struct BuildOrderView: View {
 
 struct BuildOrderView_Previews: PreviewProvider {
     static var previews: some View {
-        BuildOrderView(isShowingBuildOrder: .constant(true), buildOrder: MockData.ramos.buildOrderInstructions ?? "Something went wrong")
+        BuildOrderView(isShowingBuildOrder: .constant(true), buildOrder: ramosGinFizz.buildOrder ?? Build(instructions: [Instruction(step: 1, method: "Quit your job")]))
     }
 }

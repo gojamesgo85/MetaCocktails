@@ -30,7 +30,7 @@ struct RecipeCard: View {
 
             Spacer()
 
-            if cocktail.buildOrderInstructions != nil {
+            if cocktail.buildOrder != nil {
             
                 Button(action: {isShowingBuildOrder = true}) {
                     VStack {
@@ -47,7 +47,7 @@ struct RecipeCard: View {
                 .modifier(RoundButtonStyle())
                 .padding()
                 .sheet(isPresented: $isShowingBuildOrder) {
-                                    BuildOrderView(isShowingBuildOrder: $isShowingBuildOrder, buildOrder: cocktail.buildOrderInstructions ?? "Something went wrong.")
+                                    BuildOrderView(isShowingBuildOrder: $isShowingBuildOrder, buildOrder: cocktail.buildOrder ?? Build(instructions: [Instruction(step: 1, method: "Eat a scorpion")]))
                                 }
             }
 
@@ -69,7 +69,7 @@ struct RecipeCard: View {
 
 struct RecipeCard_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeCard(cocktail: MockData.ramos, isShowingRecipeCard: .constant(true))
+        RecipeCard(cocktail: ramosGinFizz, isShowingRecipeCard: .constant(true))
     }
 }
 

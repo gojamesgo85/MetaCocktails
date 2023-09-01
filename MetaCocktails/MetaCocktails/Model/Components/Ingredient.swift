@@ -7,14 +7,22 @@
 
 import Foundation
 
-struct Ingredient: Identifiable {
+struct CocktailIngredient: Identifiable {
     let id = UUID()
-    let name: IngredientName
+    let name: Ingredient
     let value: Double
     let unit: MeasurementUnit
+    
+    init(name: Ingredient, value: Double, unit: MeasurementUnit = .fluidOunces) {
+        self.name = name
+        self.value = value
+        self.unit = unit
+    }
 }
 
-enum IngredientName: String {
+enum Ingredient: String {
+    
+    // NA
 
     case lemon             = "Lemon Juice"
     case lime              = "Lime Juice"
@@ -29,6 +37,19 @@ enum IngredientName: String {
     case passionfruitSyrup = "Passionfruit Syrup"
     case cucumberSyrup     = "Cucumber Syrup"
     case orgeat            = "Orgeat"
+    
+    // FRUIT
+    case blackBerry        = "Blackberry"
+    case sage              = "Sage"
+    
+    /// SPIRITS
+    case gin            = "Gin"
+    case whiteRum       = "White Rum"
+    case agedRum        = "Aged Rum"
+    case blackStrapRum  = "Black Strap Rum"
+    case rum            = "Rum"
+    case vodka          = "Vodka"
+    case ryeWhiskey     = "Rye Whiskey"
 }
 
 enum MeasurementUnit: String {
@@ -38,6 +59,10 @@ enum MeasurementUnit: String {
     case disc           = "disc, with flesh"
     case limeQuarters   = "lime, quartered"
     case slices         = "slices"
+    case dash           = "dash"
+    case dashes         = "dashes"
+    case berries        = "berries"
+    case leaves         = "leaves"
 }
 
 

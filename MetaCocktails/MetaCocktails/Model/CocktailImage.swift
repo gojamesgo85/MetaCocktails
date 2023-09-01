@@ -12,12 +12,13 @@ import SwiftUI
 struct CocktailImage: View {
 
     var imageName: String
+    let backgroundColors: [Color] = [.brandPrimaryRed, .brandPrimaryBlue, .brandPrimaryOrange, .brandPrimaryPurple, .brandPrimaryYellow]
 
     var body: some View {
         Image(imageName)
             .resizable()
             .frame(width: 120, height: 120)
-            .background(cocktail.backgroundColor)
+            .background(backgroundColors.randomElement())
             .cornerRadius(12)
     }
 }

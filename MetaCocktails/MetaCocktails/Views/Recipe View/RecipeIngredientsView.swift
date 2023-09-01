@@ -15,19 +15,19 @@ struct RecipeIngredientsView: View {
         Text(cocktail.name)
             .font(.title2)
 
-        Text("GW: \(cocktail.glasswareType)")
+        Text("GW: \(cocktail.glasswareType.rawValue)")
 
-        ForEach(cocktail.ingredients) { ingredient in
-            Text("\(ingredient.value, specifier: "%.2f") oz. \(ingredient.name)")
+        ForEach(cocktail.spec) { ingredient in
+            Text("\(ingredient.value, specifier: "%.2f") oz. \(ingredient.name.rawValue)")
                 .padding(recipeSpacing)
         }
 
-        Text("G: \(cocktail.garnish)")
+        Text("G: \(cocktail.garnish.rawValue)")
     }
 }
 
 struct RecipeIngredientsView_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeIngredientsView(cocktail: MockData.daiquiri)
+        RecipeIngredientsView(cocktail: daiquiri)
     }
 }
